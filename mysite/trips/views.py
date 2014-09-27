@@ -1,18 +1,6 @@
-from django.shortcuts import render
-
-# Create your views here.
 from datetime import datetime
-from django.http import HttpResponse
+from django.shortcuts import render
 def hello_world(request):
-    output = """
-        <!DOCTYPE html>
-        <html>
-           <head>
-           </head>
-           <body>
-               Hello World! <em style="color:LightSeaGreen;">{current_time}</em>
-           </body>
-        </html>
-    """.format(current_time=datetime.now())
-
-    return HttpResponse(output)
+    return render(request,
+                  'hello_world.html',
+                  {'current_time': datetime.now()})
