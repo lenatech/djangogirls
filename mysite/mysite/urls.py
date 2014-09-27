@@ -7,4 +7,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    # http://localhost/hello/
+    url(r'^hello/$', 'trips.views.hello_world'),
 )
