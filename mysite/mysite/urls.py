@@ -9,4 +9,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     # http://localhost/hello/
     url(r'^hello/$', 'trips.views.hello_world'),
+    # add home's url
+    url(r'^$', 'trips.views.home'),
+
+    url(r'^post/(?P<id>\d+)/$', 'trips.views.post_detail',
+        name='post_detail'),
 )
