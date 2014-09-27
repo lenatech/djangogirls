@@ -1,0 +1,4 @@
+VENV
+mysite/db.sqlite3 
+*.swp
+*.pyc
