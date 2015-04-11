@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}User test{% endblock %} | Account</title>
+    </head>
+    <body>
+    {% block body %}
+        {% if user.is_authenticated %}
+        <h1>Welcome back, {{ user.username }}!</h1>
+        {% else %}
+        <h1>Login Please or Register Please</h1>
+        {% endif %}
+        hello world! <strong>{{ boldmessage }}</strong><br />
+        <a href="/accounts/login/">Login</a><br />
+        <a href="/accounts/logout/">Logout</a>
+        <a href="/accounts/register/">Register Here</a>
+        {% endblock %}
+    </body>
+</html>
+
+
+

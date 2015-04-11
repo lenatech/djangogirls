@@ -1,0 +1,16 @@
+{% extends "accounts/base.html" %} 
+
+{% block title %}login{% endblock %} 
+
+{% block body %}
+<a href="/accounts/">back</a>
+<h1>Login to accounts</h1>
+<form id="login_form" method="post" action="/accounts/login/">
+    {% csrf_token %} Username:
+    <input type="text" name="username" value="" size="50" />
+    <br /> Password:
+    <input type="password" name="password" value="" size="50" />
+    <br />
+    <input type="submit" value="submit" />
+</form>
+{% endblock %} 
