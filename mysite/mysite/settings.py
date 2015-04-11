@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'trips',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -113,3 +114,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+
+
+LOGIN_URL = '/accounts/login/'
