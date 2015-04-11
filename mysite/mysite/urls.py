@@ -14,4 +14,5 @@ urlpatterns = patterns('',
 
     url(r'^post/(?P<id>\d+)/$', 'trips.views.post_detail',
         name='post_detail'),
+    url(r'^accounts/', include('accounts.urls')),# ADD THIS NEW TUPLE!
 )
