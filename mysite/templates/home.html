@@ -1,22 +1,10 @@
 <!-- home.html -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>A Django Girl's Adventure</title>
-    <link href='http://fonts.googleapis.com/css?family=Lemon' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="http://djangogirlstaipei.github.io/assets/css/style.css" rel=stylesheet>
-</head>
-<body>
-    <div class="header">
-        <h1 class="site-title text-center">
-            <a href="/">A Django Girl's Advanture</a>
-        </h1>
-    </div>
-    <div class="container">
-        {% for post in post_list %}
+{% extends "base.html" %}
+{% block title %}Hola{% endblock %}
+
+{% block container %}
+    {% for post in post_list %}
         <div class="post-wrapper">
             <div class="post">
                 <div class="post-heading">
@@ -42,7 +30,5 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
-    </div>
-</body>
-</html>
+    {% endfor %}
+{% endblock %}
