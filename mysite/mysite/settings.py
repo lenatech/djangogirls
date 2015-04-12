@@ -36,8 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'trips',
     'accounts',
+    'trips',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,6 +115,9 @@ try:
 except ImportError:
     pass
 
+# Define Media Root
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+MEDIA_URL = '/media/'
 
 LOGIN_URL = '/accounts/login/'
