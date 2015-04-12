@@ -19,12 +19,13 @@ def index(request):
     
     #similar as post = Post.objects.get(id=id) 
     print(request.user)
-    profile = UserProfile.objects.get(user=request.user)
-    # terminal see avartar.jpg get log
-    print(profile.avatar)
-    
-    print(context_dict)
-    context_dict['profile'] = profile
+    if not request.user.is_anonymous:
+        profile = UserProfile.objects.get(user=request.user)
+        # terminal see avartar.jpg get log
+        print(profile.avatar)
+        
+        print(context_dict)
+        context_dict['profile'] = profile
     return render(request, 'accounts/index.html', context_dict)
 
 def register(request):
