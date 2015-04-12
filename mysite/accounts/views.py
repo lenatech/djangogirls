@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from accounts.forms import UserForm, UserProfileForm
-from django.contrib.auth.decorators import login_required
+from accounts.models import UserProfile
+
 
 # Create your views here.
 def index(request):
@@ -14,7 +16,15 @@ def index(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-
+    
+    #similar as post = Post.objects.get(id=id) 
+    print(request.user)
+    profile = UserProfile.objects.get(user=request.user)
+    # terminal see avartar.jpg get log
+    print(profile.avatar)
+    
+    print(context_dict)
+    context_dict['profile'] = profile
     return render(request, 'accounts/index.html', context_dict)
 
 def register(request):
