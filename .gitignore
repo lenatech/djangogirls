@@ -1,6 +1,6 @@
 VENV
 mysite/db.sqlite3
-mysite/profile_images/ 
+mysite/media/
 *.swp
 *.pyc
 __pycache__
