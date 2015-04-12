@@ -15,7 +15,7 @@
             <a href="/">A Django Girl's Adventure</a>
         </h1>
     </div>
-    <div class="container post post-detail">
+    <div class="container {% block container-class %}{% endblock %}">
 		{% block container %}{% endblock %}
     </div>
 </body>
