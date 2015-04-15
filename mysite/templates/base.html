@@ -1,7 +1,7 @@
 <!-- home.html -->
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %} | A Django Girl's Adventure</title>
@@ -9,16 +9,26 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="http://djangogirlstaipei.github.io/assets/css/style.css" rel=stylesheet>
 </head>
+
 <body>
     <div class="header">
         <h1 class="site-title text-center">
             <a href="/">A Django Girl's Adventure</a>
         </h1>
-        <a href="/accounts/">account</a>
+        <a href="/accounts/">account</a> 
+        {% if user.is_authenticated %} 
+            Welcome back, <a href="#">{{ user.username }}!</a>
+            <a href="/accounts/logout/">Logout</a> 
+        {% else %}
+            <a href="/accounts/login/">Login</a>Please or <a href="/accounts/register/">Register/Signup Here</a>
+            <br /> 
+        {% endif %}
+
     </div>
     <div class="container {% block container-class %}{% endblock %}">
-		{% block container %}{% endblock %}
+        {% block container %}{% endblock %}
     </div>
 </body>
 {% block script %}{% endblock %}
+
 </html>
