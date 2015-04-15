@@ -7,7 +7,8 @@
 <h1>Register with accounts</h1> 
 {% if registered %} 
 accounts says: <strong>thank you for registering!</strong>
-<a href="/accounts/">Return to the homepage.</a>
+<a href="/">Return to the homepage.</a>
+<a href="/accounts/">Return to your profile.</a>
 <br /> {% else %} accounts says: <strong>register here!</strong>
 <br />
 <form id="user_form" method="post" action="/accounts/register/" enctype="multipart/form-data">
