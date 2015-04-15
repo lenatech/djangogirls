@@ -19,7 +19,7 @@ def index(request):
     
     #similar as post = Post.objects.get(id=id) 
     print(request.user)
-    if not request.user.is_anonymous:
+    if not request.user.is_anonymous():
         profile = UserProfile.objects.get(user=request.user)
         # terminal see avartar.jpg get log
         print(profile.avatar)
